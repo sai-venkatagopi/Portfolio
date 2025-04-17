@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Contact Me</title>
+    <br/>
+    <div style="background-color: #222; padding: 10px 1%; display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="color: white; margin: 0;">Port<span style="color: orange;">folio </span></h2>
+        
+        <a href="homepage.html" style="color: white; text-decoration: none; margin: 0 15px;">Home</a>
+        <a href="skills.html" style="color: white; text-decoration: none; margin: 0 15px;">Skills</a>
+        <a href="hob.html" style="color: white; text-decoration: none; margin: 0 15px;">Hobbies</a>
+        <a href="Projects.html" style="color: white; text-decoration: none; margin: 0 15px;">Projects</a>
+        <a href="gal.html" style="color: white; text-decoration: none; margin: 0 15px;">Gallery </a>
+        
+        <a href="contact.html"><button style="padding: 8px 15px; background-color: white;text-decoration: none; border: none ; cursor: pointer;">Contact Me</button></a>
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #white;
+            margin: 0;
+            padding: 0;
+        }
+        form {👌🏿
+            background: white;
+            width: 300px;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, textarea, button {
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background: orange;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkorange;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Contact Me</h2>
+
+    <form id="contactForm" onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="tel" id="phone" placeholder="Your Phone" required>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <p>Email: <a href="mailto:venkatgopi2504@gmail.com">venkatgopi2504@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/sai-venkatagopi-pamarthi-6a62b4291" target="_blank">saivenkatagopi</a></p>
+    <p>Phone: +91*********</p>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
+
+            // Name validation
+            if (name.trim() === "") {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            // Email validation
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Phone number validation (exactly 10 digits)
+            var phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Please enter a valid phone number with exactly 10 digits.");
+                return false;
+            }
+
+            // Message validation (at least 10 characters)
+            if (message.trim().length < 10) {
+                alert("Your message must be at least 10 characters long.");
+                return false;
+            }
+
+            // All validations passed
+            return true;
+        }
+    </script>
+
+</body>
+</html>
